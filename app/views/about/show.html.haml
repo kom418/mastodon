@@ -6,6 +6,12 @@
   %script#initial-state{ type: 'application/json' }!= json_escape(@initial_state_json)
   = javascript_pack_tag 'about', integrity: true, crossorigin: 'anonymous'
   = render partial: 'shared/og'
+  %script{:async => "", :src => "https://www.googletagmanager.com/gtag/js?id=UA-124191053-1"}
+  :javascript
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-124191053-1');
 
 .landing-page.alternative
   .container
